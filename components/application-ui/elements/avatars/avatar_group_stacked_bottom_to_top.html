@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+
+<!-- Sidebar -->
+<aside class="bg-blue-900 text-white h-screen w-64 fixed top-0 left-0 transition-transform transform -translate-x-full ease-in-out duration-300 overflow-y-auto">
+    <div class="p-4">
+        <h1 class="text-2xl font-semibold">My App</h1>
+    </div>
+    <nav class="mt-6">
+        <a href="#" class="block p-4 hover:bg-blue-800">Home</a>
+        <a href="#" class="block p-4 hover:bg-blue-800">Dashboard</a>
+        <a href="#" class="block p-4 hover:bg-blue-800">Settings</a>
+    </nav>
+</aside>
+
+<!-- Content -->
+<main class="ml-0 sm:ml-64 p-6">
+    <!-- Home Screen Content -->
+    <section class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-3xl font-semibold mb-4">Welcome to My App</h2>
+        <p class="text-gray-700">
+            This is the home screen content. You can customize it to display whatever you need.
+        </p>
+    </section>
+</main>
+
+<!-- JavaScript to toggle sidebar -->
+<script>
+    const sidebar = document.querySelector('aside');
+    const content = document.querySelector('main');
+    const openSidebarBtn = document.querySelector('#open-sidebar');
+    const closeSidebarBtn = document.querySelector('#close-sidebar');
+
+    openSidebarBtn.addEventListener('click', () => {
+        sidebar.classList.remove('-translate-x-full');
+        content.classList.add('ml-64');
+    });
+
+    closeSidebarBtn.addEventListener('click', () => {
+        sidebar.classList.add('-translate-x-full');
+        content.classList.remove('ml-64');
+    });
+</script>
+
+</body>
+</html>
